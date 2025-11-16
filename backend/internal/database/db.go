@@ -30,7 +30,7 @@ func NewDB(databaseURL string) (*DB, error) {
 	config.HealthCheckPeriod = time.Minute    // Health check interval
 
 	// Create connection pool
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 
 	pool, err := pgxpool.NewWithConfig(ctx, config)
